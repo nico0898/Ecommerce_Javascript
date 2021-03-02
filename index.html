@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+    <!-- propio -->
+    <link rel="stylesheet" href="css/index.css">
+    <script async src="js/index.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
+            </div> -->
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-white bg-success my-3">
+                    <div class="card-body">
+                      <h5 class="card-title">Total de ingresos</h5>
+                      <p class="card-text">
+                          <span>+ 6000</span>
+                      </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-danger my-3">
+                    <div class="card-body">
+                      <h5 class="card-title">Total de gastos</h5>
+                      <p class="card-text">
+                          <span>- 8000</span>
+                      </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-primary my-3">
+                    <div class="card-body">
+                      <h5 class="card-title">Resumen</h5>
+                      <p class="card-text">
+                          <span>0</span>
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <nav class="nav nav-pills flex-column flex-sm-row" id="pills-tab" role="tablist">
+                            <a class="flex-sm-fill text-sm-center nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Ingresos</a>
+                            <a class="flex-sm-fill text-sm-center nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Gastos</a>
+                            <a class="flex-sm-fill text-sm-center nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Activos y pasivos fijos</a>
+                        </nav>
+                          <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                <div class="row">
+                                    <div class="col-md-9 my-3">
+                                        <input type="text" id="cantidadIngreso" class="form-control" placeholder="Cantidad monetaria">
+                                    </div>
+                                    <div class="col-md-3 my-3 d-grid gap-2">
+                                        <button type="button" id="agregarIngreso" class="btn btn-success" onclick="generarAccionMonetaria('INGRESO')">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                <div class="row">
+                                    <div class="col-md-9 my-3">
+                                        <input type="text" id="cantidadGasto" class="form-control" placeholder="Cantidad monetaria">
+                                    </div>
+                                    <div class="col-md-3 my-3 d-grid gap-2">
+                                        <button type="button" id="agregarGasto" class="btn btn-success" onclick="generarAccionMonetaria('GASTO')">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                <div class="row">
+                                    <div class="col-md-9 my-3">
+                                        <input type="text" id="cantidadMonetaria" class="form-control" placeholder="Cantidad monetaria">
+                                    </div>
+                                    <div class="col-md-3 my-3 d-grid gap-2">
+                                        <button type="button" id="agregar" class="btn btn-success">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <ul class="list-group list-group-flush text-end" id="lista">
+                        <li class="list-group-item">
+                            <div class="d-flex flex-row justify-content-between">
+                            <button type="button" class="btn btn-info btn-sm text-white" title="Ver detalle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+
+                            <span class="text-success">+2000</span>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex flex-row justify-content-between">
+                            <button type="button" class="btn btn-info btn-sm text-white" title="Ver detalle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+
+                            <span class="text-success">+2000</span>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex flex-row justify-content-between">
+                            <button type="button" class="btn btn-info btn-sm text-white" title="Ver detalle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+
+                            <span class="text-danger">-2000</span>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex flex-row justify-content-between">
+                            <button type="button" class="btn btn-info btn-sm text-white" title="Ver detalle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+
+                            <span class="text-success">+2000</span>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex flex-row justify-content-between">
+                            <button type="button" class="btn btn-info btn-sm text-white" title="Ver detalle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+
+                            <span class="text-danger">-2000</span>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex flex-row justify-content-between">
+                            <button type="button" class="btn btn-info btn-sm text-white" title="Ver detalle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+
+                            <span class="text-danger">-2000</span>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex flex-row justify-content-between">
+                            <button type="button" class="btn btn-info btn-sm text-white" title="Ver detalle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+
+                            <span class="text-danger">-2000</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
