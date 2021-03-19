@@ -1,0 +1,23 @@
+[
+    {
+    "id":1,
+    "nombre":"Playstation 5",
+    "precio":50000,
+    "cantidad": 1,
+    "img":"img/consola.png"
+},
+{
+    "id":2,
+    "nombre":"Joystick",
+    "precio":10000,
+    "cantidad": 1,
+    "img":"img/joystick.png"
+},
+{
+    "id":3,
+    "nombre":"Sony Vr",
+    "precio":22000,
+    "cantidad": 1,
+    "img":"img/vr.png"
+}
+]
